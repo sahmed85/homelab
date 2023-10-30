@@ -1,0 +1,30 @@
+# Ignore Terraform-specific files and directories
+/.terraform/
+/*.tfstate
+/*.tfstate.backup
+/terraform.tfstate.d/
+/*.tfplan
+/terraform.tfvars
+*.auto.tfvars
+.terraformrc
+.terraformrc.json
+terraform.rc
+.terraform.lock.hcl
+.terraform.lock.json
+
+# Ignore Terragrunt cache directory
+.terragrunt-cache/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore JetBrains IDE files
+.idea/
+
+# Ignore platform-specific files
+.DS_Store
+Thumbs.db
