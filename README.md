@@ -1,6 +1,6 @@
-# Deploying a Proxmox VM with Terraform
+# Deploying a Ubuntu VM with Terraform on Proxmox
 
-This guide explains how to deploy a Proxmox Virtual Machine (VM) using Terraform. The example VM will have 2 CPUs, 2 GB of memory, and 30 GB of storage.
+This guide explains how to deploy a Ubunut Virtual Machine (VM) using Terraform on Proxmox. The example VM will have 2 CPUs, 2 GB of memory, and 30 GB of storage.
 
 ## Prerequisites
 
