@@ -16,7 +16,7 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "vm_1" {
-  name        = "homelab-vm-1"
+  name        = "homelab-rancher"
   target_node = "homelab"
   iso         = "local:iso/ubuntu-server-22.04.3.iso"
 
