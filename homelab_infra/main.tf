@@ -57,7 +57,7 @@ resource "proxmox_vm_qemu" "vm_1" {
   # Define the VM resources
   cores  = 2
   sockets = 1
-  memory = 2048  # 2 GB
+  memory = 3072 # 3 GB
 
   # Disk configuration
   disk {
@@ -87,7 +87,7 @@ resource "proxmox_vm_qemu" "vm_2" {
   # Define the VM resources
   cores  = 2
   sockets = 1
-  memory = 2048  # 2 GB
+  memory = 3072 # 3 GB
 
   # Disk configuration
   disk {
@@ -117,7 +117,7 @@ resource "proxmox_vm_qemu" "vm_3" {
   # Define the VM resources
   cores  = 2
   sockets = 1
-  memory = 2048  # 2 GB
+  memory = 3072 # 3 GB
 
   # Disk configuration
   disk {
@@ -132,6 +132,11 @@ resource "proxmox_vm_qemu" "vm_3" {
     bridge = "vmbr0"  # Replace with your bridge name
     firewall = true
   }
+}
+
+# Output the VM's ID
+output "vm_compute_server" {
+  value = proxmox_vm_qemu.compute_server.id
 }
 
 # Output the VM's ID
