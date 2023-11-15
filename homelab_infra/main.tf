@@ -19,7 +19,7 @@ resource "proxmox_vm_qemu" "compute_server" {
   vmid = 100
   name        = "BreathofThunder"
   target_node = "homelab"
-  clone         = "local:iso/ubuntu-server-22.04.3.iso"
+  clone         = "ubuntu--22.04-server-template"
 
   # Specifying the VM parameters
   os_type = "ubuntu"  # Ubuntu Server
