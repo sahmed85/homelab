@@ -1,6 +1,6 @@
 variable "proxmox_user" {
   description = "Proxmox username"
-  default = "root@pam"
+  default     = "root@pam"
 }
 
 variable "proxmox_password" {
