@@ -59,3 +59,17 @@ spec:
         - name: home-assistant-data-tier-volume
           persistentVolumeClaim:
             claimName: home-assistant-data-tier-volume-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant
+spec:
+  selector:
+    app: home-assistant
+  ports:
+    - protocol: TCP
+      port: 8080  # NodePort
+      targetPort: 80  # Container port
+  type: NodePort
+
