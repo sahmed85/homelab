@@ -3,24 +3,59 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: homelab-home-assistant
-
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: home-assistant-data-tier-volume
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /homelab/home-assistant-pvc # actual host path where you want to store data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim # create a pvc claim here
+metadata:
+  name: home-assistant-data-tier-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 512Mi # 128 mebibytes 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: homelab-home-assistant
+  labels:
+    app: home-assistant
+    tier: data
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      tier: data
   template:
     metadata:
       labels:
-        app: nginx
-    spec:
+        app: home-assistant
+        tier: data
+    spec: # pod spec
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: home-assistant
+          image: ghcr.io/home-assistant/home-assistant:stable
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: home-assistant
+          volumeMounts: # mount container to volume
+            - mountPath: /config
+              name: home-assistant-data-tier-volume
+      volumes: # attach pvc to pod
+        - name: home-assistant-data-tier-volume
+          persistentVolumeClaim:
+            claimName: home-assistant-data-tier-volume-claim
