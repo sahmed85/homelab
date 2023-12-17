@@ -1,4 +1,10 @@
 # nginx-deployment.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: homelab_home_assistant
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
