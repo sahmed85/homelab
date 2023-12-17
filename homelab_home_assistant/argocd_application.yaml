@@ -69,7 +69,5 @@ spec:
     app: home-assistant
   ports:
     - protocol: TCP
-      port: 8080  # NodePort
       targetPort: 80  # Container port
   type: NodePort
-
