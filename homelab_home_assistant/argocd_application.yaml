@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: homelab_home_assistant
+  name: homelab-home-assistant
 
 ---
 apiVersion: apps/v1
