@@ -50,7 +50,7 @@ spec:
           image: ghcr.io/home-assistant/home-assistant:stable
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 8123
               name: home-assistant
           volumeMounts: # mount container to volume
             - mountPath: /config
@@ -69,5 +69,5 @@ spec:
     app: home-assistant
   ports:
     - protocol: TCP
-      port: 80  # NodePort
+      port: 8123  # containerPort
   type: NodePort
