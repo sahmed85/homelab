@@ -33,5 +33,5 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 80  # NodePort
+      port: 80  # containerPort
   type: NodePort
