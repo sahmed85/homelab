@@ -1,4 +1,13 @@
 terraform {
+  
+  cloud {
+    organization = "shada-homelab"
+
+    workspaces {
+      name = "homelab-infra"
+    }
+  }
+  
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
