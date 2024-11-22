@@ -1,12 +1,12 @@
 terraform {
   
-  cloud {
-    organization = "shada-homelab"
+  # cloud {
+  #   organization = "shada-homelab"
 
-    workspaces {
-      name = "homelab-infra"
-    }
-  }
+  #   workspaces {
+  #     name = "homelab-infra"
+  #   }
+  # }
   
   required_providers {
     proxmox = {
