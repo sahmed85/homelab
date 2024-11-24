@@ -1,13 +1,10 @@
 name: Homelab Terraform
 run-name: ${{ github.actor }} Deploying Infra 🚀
 on: [push, workflow_dispatch]
-env:
-    TF_STATE_BUCKET: "Test"
-    TF_STATE_BUCKET_KEY: ${{vars.TF_STATE_BUCKET_KEY}}
-    TF_STATE_BUCKET_REGION: ${{vars.TF_STATE_BUCKET_REGION}}
 jobs:
   Explore-GitHub-Actions:
     runs-on: self-hosted
+    environment: homelab-dev
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -19,5 +16,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "The env var for TF_STATE_BUCKET $TF_STATE_BUCKET."
+      - run: echo "The env var for TF_STATE_BUCKET ${{vars.TF_STATE_BUCKET}}."
       - run: echo "🍏 This job's status is ${{ job.status }}."
