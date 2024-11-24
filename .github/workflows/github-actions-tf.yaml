@@ -6,6 +6,7 @@ jobs:
     runs-on: self-hosted
     environment: homelab-dev
     steps:
+    # Debug Info for Step
       - run: >
             echo "Debug Info - Triggered by: ${{ github.event_name }}; Job Running on OS ${{ runner.os }}; Branch ${{ github.ref }}."
       - name: Check Code
@@ -13,8 +14,18 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/homelab_infra
+          cd ${{ github.workspace }}/homelab_infra
       - run: echo "The env var for TF_STATE_BUCKET ${{vars.TF_STATE_BUCKET}}."
+
+    # Setup Terraform CLI
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+    # Checks that all Terraform configuration files adhere to a canonical format
+      - name: Terraform Format
+        run: terraform fmt -check
+
+
 #   tf-validate:
 #     runs-on: self-hosted
 #     environment: homelab-dev
