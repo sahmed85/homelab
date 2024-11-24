@@ -6,7 +6,8 @@ jobs:
     runs-on: self-hosted
     environment: homelab-dev
     steps:
-      - run: "Run Debug Info: Triggered by: ${{ github.event_name }}; Job Running on OS ${{ runner.os }}; Branch ${{ github.ref }}."
+      - run: >
+            echo "Debug Info - Triggered by: ${{ github.event_name }}; Job Running on OS ${{ runner.os }}; Branch ${{ github.ref }}."
       - name: Check Code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
