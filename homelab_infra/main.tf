@@ -3,7 +3,7 @@ terraform {
 
   # pass backend s3 through terraform flags
   backend "s3" {
-    
+
   }
 
   required_providers {
@@ -63,7 +63,7 @@ resource "proxmox_vm_qemu" "aurora_server" {
   target_node = "homelab"
   clone       = "ubuntu-jammy-template" # custom template that I created
   full_clone  = true
-  onboot = true
+  onboot      = true
   # Define the VM resources
   # Define the VirtIO SCSI controller
   scsihw    = "virtio-scsi-pci"
@@ -85,8 +85,8 @@ resource "proxmox_vm_qemu" "aurora_server" {
   # Network interface
   network {
     model    = "virtio"
-    bridge   = "vmbr0" # Replace with your bridge name
-    macaddr = "14:19:10:2b:96:fa" # random gen MAC Add added for DHCP Reservation
+    bridge   = "vmbr0"             # Replace with your bridge name
+    macaddr  = "14:19:10:2b:96:fa" # random gen MAC Add added for DHCP Reservation
     firewall = true
   }
 }
