@@ -23,7 +23,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
     # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Format
-        run: >
+        run: |
             ls ${{ github.workspace }}/homelab_infra
             cd ${{ github.workspace }}/homelab_infra
             terraform fmt -check
