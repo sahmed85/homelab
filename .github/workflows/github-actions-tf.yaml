@@ -4,7 +4,7 @@ on: [workflow_dispatch, push]
 jobs:
   tf-fmt-check:
     runs-on: self-hosted
-    environment: homelab-dev
+    # environment: homelab-dev
     steps:
     # Debug Info for Step
       - run: >
@@ -26,7 +26,7 @@ jobs:
 
   tf-validate:
     runs-on: self-hosted
-    environment: homelab-dev
+    # environment: homelab-dev
     steps:
     # Debug Info for Step
       - run: >
@@ -52,7 +52,7 @@ jobs:
 
   tf-plan:
     runs-on: self-hosted
-    environment: homelab-dev
+    # environment: homelab-dev
     needs: tf-validate # Job only runs after tf-validate succeeds
     steps:
     # Debug Info for Step
@@ -105,6 +105,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_SECRET_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             path: ${{ github.workspace }}/homelab_infra
             backend_config: |
