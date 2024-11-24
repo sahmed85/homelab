@@ -40,7 +40,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}/homelab_infra
           cd ${{ github.workspace }}/homelab_infra
-      - run: echo "The env var for TF_STATE_BUCKET ${{vars.TF_STATE_BUCKET}}."
+      - run: echo "The env var for TF_STATE_BUCKET ${{ vars.TF_STATE_BUCKET }}."
 
     # Checks that all Terraform syntax used is valid
       - name: Terraform Validate
@@ -51,3 +51,33 @@ jobs:
                 bucket=${{ vars.TF_STATE_BUCKET }}
                 key=${{ vars.TF_STATE_BUCKET_KEY }}
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
+
+  tf-plan:
+    runs-on: self-hosted
+    environment: homelab-dev
+    needs: tf-validate # Job only runs after tf-validate succeeds
+    steps:
+    # Debug Info for Step
+      - run: >
+            echo "Debug Info - Triggered by: ${{ github.event_name }}; Job Running on OS ${{ runner.os }}; Branch ${{ github.ref }}."
+      - name: Check Code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}/homelab_infra
+          cd ${{ github.workspace }}/homelab_infra
+      - run: echo "The env var for TF_STATE_BUCKET ${{ vars.TF_STATE_BUCKET }}."
+
+    # Creates the terraform plan
+      - name: Terraform Plan
+        uses: dflook/terraform-plan@v1
+        with:
+            path: ${{ github.workspace }}/homelab_infra
+            backend_config: |
+                bucket=${{ vars.TF_STATE_BUCKET }}
+                key=${{ vars.TF_STATE_BUCKET_KEY }}
+                region=${{ vars.TF_STATE_BUCKET_REGION }}
+            variables: |
+                proxmox_password = ${{ vars.HOMELAB_PROXMOX_PASSWORD }}
+
