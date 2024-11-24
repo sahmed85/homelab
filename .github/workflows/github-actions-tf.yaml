@@ -72,6 +72,9 @@ jobs:
     # Creates the terraform plan
       - name: Terraform Plan
         uses: dflook/terraform-plan@v1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_SECRET_KEY }}
         with:
             path: ${{ github.workspace }}/homelab_infra
             backend_config: |
@@ -79,5 +82,5 @@ jobs:
                 key=${{ vars.TF_STATE_BUCKET_KEY }}
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
             variables: |
-                proxmox_password = ${{ vars.HOMELAB_PROXMOX_PASSWORD }}
+                proxmox_password = ${{ secrets.HOMELAB_PROXMOX_PASSWORD }}
 
