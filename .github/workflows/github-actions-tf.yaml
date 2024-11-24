@@ -83,4 +83,39 @@ jobs:
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
             variables: |
                 proxmox_password = "${{ secrets.HOMELAB_PROXMOX_PASSWORD }}"
+    
+  tf-apply:
+    runs-on: self-hosted
+    environment: homelab-dev
+    needs: tf-plan # Job only runs after tf-plan succeeds
+    if: ${{ github.event_name == 'workflow_dispatch' }} # Job only runs from manual trigger
+    steps:
+    # Debug Info for Step
+      - run: >
+            echo "Debug Info - Triggered by: ${{ github.event_name }}; Job Running on OS ${{ runner.os }}; Branch ${{ github.ref }}."
+      - name: Check Code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}/homelab_infra
+          cd ${{ github.workspace }}/homelab_infra
+      - run: echo "The env var for TF_STATE_BUCKET ${{ vars.TF_STATE_BUCKET }}."
+
+    # Terraform Apply the plan
+      - name: Terraform Apply
+        uses: dflook/terraform-apply@v1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHADA_HOMELAB_DEPLOY_USER_SECRET_KEY }}
+        with:
+            path: ${{ github.workspace }}/homelab_infra
+            backend_config: |
+                bucket=${{ vars.TF_STATE_BUCKET }}
+                key=${{ vars.TF_STATE_BUCKET_KEY }}
+                region=${{ vars.TF_STATE_BUCKET_REGION }}
+            variables: |
+                proxmox_password = "${{ secrets.HOMELAB_PROXMOX_PASSWORD }}"
+        
+
 
