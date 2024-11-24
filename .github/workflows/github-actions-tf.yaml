@@ -82,5 +82,5 @@ jobs:
                 key=${{ vars.TF_STATE_BUCKET_KEY }}
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
             variables: |
-                proxmox_password = ${{ secrets.HOMELAB_PROXMOX_PASSWORD }}
+                proxmox_password = "${{ secrets.HOMELAB_PROXMOX_PASSWORD }}"
 
