@@ -1,6 +1,4 @@
 terraform {
-
-
   # pass backend s3 through terraform flags
   backend "s3" {
 
