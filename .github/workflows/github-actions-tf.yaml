@@ -2,7 +2,7 @@ name: Homelab Terraform
 run-name: ${{ github.actor }} Deploying Infra 🚀
 on: [push, workflow_dispatch]
 env:
-    TF_STATE_BUCKET: ${{vars.TF_STATE_BUCKET}}
+    TF_STATE_BUCKET: "Test"
     TF_STATE_BUCKET_KEY: ${{vars.TF_STATE_BUCKET_KEY}}
     TF_STATE_BUCKET_REGION: ${{vars.TF_STATE_BUCKET_REGION}}
 jobs:
