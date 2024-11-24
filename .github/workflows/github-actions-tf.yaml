@@ -18,7 +18,7 @@ jobs:
           cd ${{ github.workspace }}/homelab_infra
       - run: echo "The env var for TF_STATE_BUCKET ${{vars.TF_STATE_BUCKET}}."
 
-    # Checks that all Terraform configuration files adhere to a canonical format
+    # Checks that all Terraform configuration files adhere to a canonical formats
       - name: Terraform Format
         uses: dflook/terraform-fmt-check@v1
         with:
