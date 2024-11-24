@@ -1,6 +1,6 @@
 name: Homelab Terraform
-run-name: ${{ github.actor }} Deploying Infra 🚀
-on: [push, workflow_dispatch]
+run-name: Terraform Homelab Deploying Infra 🚀
+on: [workflow_dispatch, push]
 jobs:
   tf-fmt-check:
     runs-on: self-hosted
@@ -23,8 +23,6 @@ jobs:
         uses: dflook/terraform-fmt-check@v1
         with:
             path: ${{ github.workspace }}/homelab_infra
-
-
 
   tf-validate:
     runs-on: self-hosted
@@ -88,7 +86,6 @@ jobs:
     runs-on: self-hosted
     environment: homelab-dev
     needs: tf-plan # Job only runs after tf-plan succeeds
-    if: ${{ github.event_name == 'workflow_dispatch' }} # Job only runs from manual trigger
     steps:
     # Debug Info for Step
       - run: >
