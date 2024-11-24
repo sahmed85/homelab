@@ -1,6 +1,8 @@
-name: Homelab Terraform
+name: Homelab Terraform Deploy
 run-name: Terraform Homelab Deploying Infra 🚀
-on: [workflow_dispatch, push]
+on:
+  push:
+  workflow_dispatch: # Enables manual triggering from the GitHub Actions UI
 jobs:
   tf-fmt-check:
     runs-on: self-hosted
