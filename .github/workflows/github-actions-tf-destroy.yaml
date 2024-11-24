@@ -3,7 +3,7 @@ run-name: Terraform Homelab Destroying Infra 💥
 on:
   workflow_dispatch: # Enables manual triggering from the GitHub Actions UI
 jobs:
-  tf-apply:
+  tf-destroy:
     runs-on: self-hosted
     environment: homelab-dev
     steps:
