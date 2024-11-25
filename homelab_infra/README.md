@@ -58,6 +58,11 @@ Be sure to replace the placeholder values with your specific configuration detai
 
 ```bash
 terraform init
+
+terraform init \
+-backend-config="bucket=${TFSTATE_BUCKET}" \
+-backend-config="key=${TFSTATE_KEY}" \
+-backend-config="region=${TFSTATE_REGION}" 
 ```
 
 5. Plan the changes by running:
