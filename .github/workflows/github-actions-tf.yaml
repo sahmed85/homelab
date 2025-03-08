@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # Enables manual triggering from the GitHub Actions UI
 jobs:
   tf-fmt-check:
-    runs-on: self-hosted
+    runs-on: ['self-hosted', 'homelab-runner-pc']
     # environment: homelab-dev
     steps:
     # Debug Info for Step
@@ -29,7 +29,7 @@ jobs:
             path: ${{ github.workspace }}/homelab_infra
 
   tf-validate:
-    runs-on: self-hosted
+    runs-on: ['self-hosted', 'homelab-runner-pc']
     # environment: homelab-dev
     steps:
     # Debug Info for Step
@@ -55,7 +55,7 @@ jobs:
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
 
   tf-plan:
-    runs-on: self-hosted
+    runs-on: ['self-hosted', 'homelab-runner-pc']
     # environment: homelab-dev
     needs: tf-validate # Job only runs after tf-validate succeeds
     steps:
@@ -87,7 +87,7 @@ jobs:
                 proxmox_password = "${{ secrets.HOMELAB_PROXMOX_PASSWORD }}"
     
   tf-apply:
-    runs-on: self-hosted
+    runs-on: ['self-hosted', 'homelab-runner-pc']
     environment: homelab-dev
     needs: tf-plan # Job only runs after tf-plan succeeds
     steps:

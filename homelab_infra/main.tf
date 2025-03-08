@@ -20,39 +20,39 @@ provider "proxmox" {
 }
 
 # vm 1
-# resource "proxmox_vm_qemu" "nebula_server" {
-#   vmid        = 201
-#   name        = "nebula-server"
-#   target_node = "homelab"
-#   clone       = "ubuntu-jammy-template" # custom template that I created
-#   full_clone  = true
-#   onboot = true
-#   # Define the VM resources
-#   # Define the VirtIO SCSI controller
-#   scsihw    = "virtio-scsi-pci"
-#   ciuser    = "shada"
-#   ipconfig0 = "ip=10.0.0.177/24,gw=10.0.0.1"
-#   qemu_os   = "other"
+resource "proxmox_vm_qemu" "nebula_server" {
+  vmid        = 201
+  name        = "nebula-server"
+  target_node = "homelab"
+  clone       = "ubuntu-jammy-template" # custom template that I created
+  full_clone  = true
+  onboot = true
+  # Define the VM resources
+  # Define the VirtIO SCSI controller
+  scsihw    = "virtio-scsi-pci"
+  ciuser    = "shada"
+  ipconfig0 = "ip=10.0.0.177/24,gw=10.0.0.1"
+  qemu_os   = "other"
 
-#   cores   = 4
-#   sockets = 1
-#   memory  = 7168 # 7 GB
+  cores   = 4
+  sockets = 1
+  memory  = 7168 # 7 GB
 
-#   # Disk configuration
-#   disk {
-#     storage = "local-lvm" # Replace with your storage pool name
-#     size    = "50G"
-#     type    = "scsi"
-#   }
+  # Disk configuration
+  disk {
+    storage = "local-lvm" # Replace with your storage pool name
+    size    = "50G"
+    type    = "scsi"
+  }
 
-#   # Network interface
-#   network {
-#     model    = "virtio"
-#     bridge   = "vmbr0" # Replace with your bridge name
-#     macaddr = "b4:b6:19:2b:2a:52" # random gen MAC Add added for DHCP Reservation
-#     firewall = true
-#   }
-# }
+  # Network interface
+  network {
+    model    = "virtio"
+    bridge   = "vmbr0" # Replace with your bridge name
+    macaddr = "b4:b6:19:2b:2a:52" # random gen MAC Add added for DHCP Reservation
+    firewall = true
+  }
+}
 
 # vm 2
 resource "proxmox_vm_qemu" "aurora_server" {
