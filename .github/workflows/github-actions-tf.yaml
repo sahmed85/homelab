@@ -55,7 +55,7 @@ jobs:
                 region=${{ vars.TF_STATE_BUCKET_REGION }}
 
   tf-plan:
-    runs-on: ['self-hosted', 'homelab-runner-pc']
+    runs-on: ['self-hosted', 'homelab-runner-pc-linux']
     # environment: homelab-dev
     needs: tf-validate # Job only runs after tf-validate succeeds
     steps:
@@ -87,7 +87,7 @@ jobs:
                 proxmox_password = "${{ secrets.HOMELAB_PROXMOX_PASSWORD }}"
     
   tf-apply:
-    runs-on: ['self-hosted', 'homelab-runner-pc']
+    runs-on: ['self-hosted', 'homelab-runner-pc-linux']
     environment: homelab-dev
     needs: tf-plan # Job only runs after tf-plan succeeds
     steps:
