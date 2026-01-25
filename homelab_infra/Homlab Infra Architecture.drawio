@@ -1,17 +1,17 @@
-<mxfile host="Electron" modified="2024-07-01T02:24:01.401Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.18 Chrome/120.0.6099.199 Electron/28.1.2 Safari/537.36" etag="nAWvYClnA2Z2ytb8yL2h" version="22.1.18" type="device" pages="3">
+<mxfile host="Electron" modified="2025-12-31T19:34:02.806Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.18 Chrome/120.0.6099.199 Electron/28.1.2 Safari/537.36" etag="GN94l4aTBqLgfLpUuISp" version="22.1.18" type="device" pages="3">
   <diagram id="C5oOuqK4uCejyhNqq42W" name="Naming Standard">
-    <mxGraphModel dx="1434" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="P65dTQwfyc4noZKhJvpg-2" value="&lt;h1&gt;Code Name Standard Ref&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;ul style=&quot;font-size: 21px;&quot;&gt;&lt;li&gt;Intel Nuc - Bare Metal Hypervisor: Nova&lt;/li&gt;&lt;li&gt;VM 1: Nebula&lt;/li&gt;&lt;li&gt;VM 2: Aurora&lt;/li&gt;&lt;li&gt;RPI 5 - 8GB: Cipher&lt;/li&gt;&lt;li&gt;RPI 5 - 4GB: Phoenix&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="40" width="500" height="210" as="geometry" />
+        <mxCell id="P65dTQwfyc4noZKhJvpg-2" value="&lt;h1&gt;Code Name Standard Ref&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;ul style=&quot;font-size: 21px;&quot;&gt;&lt;li&gt;Supermicro Server - Bare Metal Hypervisor: Nova&lt;/li&gt;&lt;ul&gt;&lt;li&gt;hostname: hl-nova&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;VM 1: Nebula&lt;/li&gt;&lt;ul&gt;&lt;li&gt;hostname: hl-nebula&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;VM 2: Aurora&lt;/li&gt;&lt;ul&gt;&lt;li&gt;hostname: hl-aurora&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;RPI 5 - 8GB: Cipher&lt;/li&gt;&lt;li&gt;RPI 5 - 4GB: Phoenix&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="40" width="780" height="470" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="Network Setup" id="y5MB4PG8_KQpzrVjRbdm">
-    <mxGraphModel dx="1434" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -21,7 +21,7 @@
         <mxCell id="F0W9S0jO7jZfU5PaMhUE-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="20" y="340" width="760" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="V8Oin1zptPc2NcK_wDoO-1" value="&lt;h1&gt;Nova Server (HV)&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP:&amp;nbsp; 10.0.0.176&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC: 71:9B&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+        <mxCell id="V8Oin1zptPc2NcK_wDoO-1" value="&lt;h1&gt;Nova Server (HV)&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP:&amp;nbsp; 10.0.0.176&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC: b2:64&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="380" width="210" height="120" as="geometry" />
         </mxCell>
         <mxCell id="E7k7vrJ1UfaNUGe9Ev70-1" value="&lt;h1&gt;Cipher Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP WIFI:&amp;nbsp; 10.0.0.179&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP Eth: 10.0.0.186&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC WIFI: 2d:ab&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC Eth: 2d:aa&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
@@ -36,13 +36,13 @@
         <mxCell id="F0W9S0jO7jZfU5PaMhUE-4" value="RPi 5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="525" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="fBIAKoxOq2Dpl7yIuc6B-1" value="&lt;h1&gt;Phoenix Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP WIFI:&amp;nbsp; 10.0.0.180&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP Eth: 10.0.0.185&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC WIFI: 82:b8&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC Eth: 82:b7&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="fBIAKoxOq2Dpl7yIuc6B-1" value="&lt;h1&gt;Phoenix Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP WIFI:&amp;nbsp; 10.0.0.180&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP Eth: 10.0.0.185&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC WIFI: 82:b8&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC Eth: 82:b7&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="370" y="540" width="260" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="2oT5PvWAhbJOK9KJV9yR-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="2oT5PvWAhbJOK9KJV9yR-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="250" y="380" width="460" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="cSavmD5kuD603t4nYaTZ-1" value="&lt;h1&gt;Nebula Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP:&amp;nbsp; 10.0.0.177&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC: 2A:52&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+        <mxCell id="cSavmD5kuD603t4nYaTZ-1" value="&lt;h1&gt;Nebula Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP:&amp;nbsp; 10.0.0.177&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC:&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="260" y="380" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="cSavmD5kuD603t4nYaTZ-2" value="&lt;h1&gt;Aurora Server&lt;/h1&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Static IP:&amp;nbsp; 10.0.0.178&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MAC:&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
